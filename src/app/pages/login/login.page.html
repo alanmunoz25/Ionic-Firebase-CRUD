@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>    
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input value="alan.luis.munoz@gmail.com" type="text" #email required></ion-input>
+    </ion-item> 
+
+    <ion-item lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input value="131078" type="password" #password required></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col> 
+      <ion-button type="submit" (click)="singIn(email, password)" expand="block">Login</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <a routerLink="/register-user"> Register </a>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

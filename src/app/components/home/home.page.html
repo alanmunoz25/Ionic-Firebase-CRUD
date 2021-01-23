@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      My ToDo List
+    </ion-title>
+    <ion-icon name="person" [routerLink]="'/update-profile'" slot="end"></ion-icon>
+    <ion-icon (click)="authService.signOut()" name="log-out" slot="end"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="outer-content" [fullscreen]="true">
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let note of (notes | async)">
+      {{ note.title }}
+      <ion-button fill="outline" slot="end" [routerLink]="'/view-note/'+note.id">View</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="'/add-note'">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+</ion-content>

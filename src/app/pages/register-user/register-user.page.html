@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-button slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-button>
+
+    <ion-title>Register User</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>    
+    <ion-item lines="full">
+      <ion-label position="floating">Full Name</ion-label>
+      <ion-input value="Alan brito" type="text" #displayName required></ion-input>
+    </ion-item> 
+    <ion-item lines="full">
+      <ion-label position="floating">Birthday</ion-label>
+      <ion-input value="13/10/1978" type="text" #birthday required></ion-input>
+    </ion-item> 
+    <ion-item lines="full">
+      <ion-label position="floating">Hobby</ion-label>
+      <ion-input value="Play guitar" type="text" #hobby required></ion-input>
+    </ion-item> 
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input value="alan.luis.munoz@gmail.com" type="text" #email required></ion-input>
+    </ion-item> 
+
+    <ion-item lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input value="131078" type="password" #password required></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col> 
+      <ion-button type="submit" (click)="signUp(email, password, displayName, birthday, hobby)" expand="block">Register</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-button>
+
+    <ion-title>Update my profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>    
+    <ion-item lines="full">
+      <ion-label position="floating">Full Name</ion-label>
+      <ion-input [(ngModel)]="userData.displayName" name="displayName"></ion-input>
+    </ion-item> 
+    <ion-item lines="full">
+      <ion-label position="floating">Birthday</ion-label>
+      <ion-input [(ngModel)]="userData.birthday" name="birthday"></ion-input>
+    </ion-item> 
+    <ion-item lines="full">
+      <ion-label position="floating">Hobby</ion-label>
+      <ion-input [(ngModel)]="userData.hobby" name="hobby"></ion-input>
+    </ion-item> 
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input disabled type="text" ></ion-input>
+    </ion-item> 
+
+    <ion-item lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input value="" type="password" required name="password"></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col> 
+      <ion-button type="submit" (click)="updateUser()" expand="block">Actualizar</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
